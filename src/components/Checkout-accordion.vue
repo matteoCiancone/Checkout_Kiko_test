@@ -2,14 +2,14 @@
 
     <div class="Cart__Main">
 
-        <button class="accordion">Section 1</button>
+        <button class="accordion"><strong>Il tuo ordine</strong> <span>22,88 &euro;</span>
+            <p>comprende spese di spedizione stimate</p>
+        </button>
         <div class="panel">
 
         </div>
 
     </div>
-
-
 
 </template>
 
