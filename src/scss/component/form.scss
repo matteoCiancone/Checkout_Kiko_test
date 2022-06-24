@@ -1,0 +1,54 @@
+form {
+    background-color: white;
+    padding: 10px;
+
+    p {
+        text-align: start;
+        color: rgb(172, 170, 170);
+        margin-top: 3px;
+        font-size: 1.1rem;
+    }
+
+    input {
+        width: 100%;
+        padding: 25px 0px 8px 0px;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+
+    select {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid black;
+        padding: 25px 0px 8px 0px;
+    }
+
+    .checkbox {
+        text-align: start;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        font-size: 1.2rem;
+
+        input {
+            width: 10%;
+            margin-bottom: 15px;
+        }
+
+        label {
+            width: 85%;
+            margin-bottom: 15px;
+            padding: 3px 0 0 0;
+        }
+    }
+}
+
+.showShipmentBtn {
+    margin: 20px 0 20px 0;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+}
