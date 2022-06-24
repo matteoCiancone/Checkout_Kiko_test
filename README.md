@@ -1,4 +1,4 @@
-# checkout
+# checkout VueJs V2
 
 ## Project setup
 ```
