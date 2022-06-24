@@ -7,6 +7,7 @@ form {
         color: rgb(172, 170, 170);
         margin-top: 3px;
         font-size: 1.1rem;
+        width: 100%;
     }
 
     input {
@@ -21,22 +22,22 @@ form {
         border: none;
         border-bottom: 1px solid black;
         padding: 25px 0px 8px 0px;
+        color: rgb(118, 118, 118);
     }
 
     .checkbox {
-        text-align: start;
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-start;
+        justify-content: start;
         font-size: 1.2rem;
 
         input {
-            width: 10%;
             margin-bottom: 15px;
+            width: auto;
+
         }
 
         label {
-            width: 85%;
             margin-bottom: 15px;
             padding: 3px 0 0 0;
         }
@@ -51,4 +52,56 @@ form {
     background-color: black;
     color: white;
     border-radius: 20px;
+}
+
+@media (min-width: 960px) {
+    .form-container {
+        background-color: white;
+    }
+
+    form {
+        width: 60%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        input {
+            width: 48%;
+        }
+
+        select {
+            width: 48%;
+        }
+
+        #more-info-input {
+            width: 100%;
+        }
+
+        .checkbox {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            font-size: 1.2rem;
+
+            input {
+                margin: 0px 5px 0 0;
+                flex-basis: 3%;
+            }
+
+            label {
+                padding: 0px;
+                flex-basis: 95%;
+            }
+
+
+        }
+
+    }
+
+    .showShipmentBtn {
+        width: 50%;
+        margin: 20px auto;
+    }
+
 }

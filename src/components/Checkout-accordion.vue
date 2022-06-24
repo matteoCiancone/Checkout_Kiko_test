@@ -1,6 +1,13 @@
 <template>
 
+    <div class="Cart__Main">
 
+        <button class="accordion">Section 1</button>
+        <div class="panel">
+
+        </div>
+
+    </div>
 
 
 
