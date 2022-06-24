@@ -20,10 +20,14 @@
       <p>Max 30: caratteri c/o, interno, nome sul citofono</p>
 
       <div class="checkbox">
-        <input type="checkbox" name="salva indirizzo" id="salva-indirizzo-box">
-        <label for="salva-indirizzo-box">Salva questo indirizzo nella rubrica</label>
-        <input type="checkbox" name="dati fatturazione" id="dati-fatturazione-box">
-        <label for="dati-fatturazione-box">I miei dati di fatturazione coincidono con i dati per la consegna</label>
+        <div class="checkbox-indirizzo">
+          <input type="checkbox" name="salva indirizzo" id="salva-indirizzo-box">
+          <label for="salva-indirizzo-box">Salva questo indirizzo nella rubrica</label>
+        </div>
+        <div class="checkbox-fatturazione">
+          <input type="checkbox" name="dati fatturazione" id="dati-fatturazione-box">
+          <label for="dati-fatturazione-box">I miei dati di fatturazione coincidono con i dati per la consegna</label>
+        </div>
       </div>
 
       <button class="showShipmentBtn" type="button">Mostra metodi di spedizioni</button>
