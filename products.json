@@ -1,0 +1,52 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "Instant Colour MatteLiquid Lip Colour",
+            "color": "pink",
+            "quantity": "1",
+            "price": "5,99",
+            "img": ""
+        },
+        {
+            "id": "2",
+            "name": "Smart Hydrating Foundation",
+            "color": "pink",
+            "quantity": "1",
+            "price": "5,99",
+            "img": ""
+        },
+        {
+            "id": "3",
+            "name": "Instant Colour MatteLiquid Lip Colour",
+            "color": "pink",
+            "quantity": "1",
+            "price": "5,99",
+            "img": ""
+        },
+        {
+            "id": "4",
+            "name": "Smart Hydrating Foundation",
+            "color": "pink",
+            "quantity": "1",
+            "price": "5,99",
+            "img": ""
+        },
+        {
+            "id": "5",
+            "name": "Instant Colour MatteLiquid Lip Colour",
+            "color": "pink",
+            "quantity": "2",
+            "price": "5,99",
+            "img": ""
+        },
+        {
+            "id": "6",
+            "name": "Smart Hydrating Foundation",
+            "color": "pink",
+            "quantity": "1",
+            "price": "5,99",
+            "img": ""
+        }
+    ]
+}

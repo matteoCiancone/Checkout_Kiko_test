@@ -1,26 +1,43 @@
 <template>
-
     <div class="Cart__Main">
-
-        <button class="accordion"><strong>Il tuo ordine</strong> <span>22,88 &euro;</span>
-            <p>comprende spese di spedizione stimate</p>
+        <button @click="toggleAccordion()" class="accordion" :aria-expanded="isOpen" :aria-controls="`collapse${_uid}`">
+            <slot name="header" />
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z" />
+            </svg>
         </button>
-        <div class="panel">
-
+        <div v-show="isOpen" :id="`collapse${_uid}`" class="panel">
+            <slot name="order-recap" />
         </div>
-
     </div>
-
 </template>
 
 
 <script>
 export default {
-    name: "Checkout-accordion",
-};
+    name: "Accordion",
+    data() {
+        return {
+            isOpen: false,
+        };
+    },
+
+    mounted() {
+    },
+
+    methods: {
+        toggleAccordion() {
+            this.isOpen = !this.isOpen;
+        }
+    },
+}
+
+
+
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-@import "../../src/scss/component/accordion.scss"
-</style>
+
+    <!-- Add "scoped" attribute to limit CSS to this component only -->
+    <style scoped lang="scss">
+    @import "../../src/scss/component/accordion.scss"
+    </style>

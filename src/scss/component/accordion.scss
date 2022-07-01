@@ -13,43 +13,13 @@
     text-align: left;
     font-size: 15px;
     transition: 0.4s;
-    position: relative;
-
-    strong {
-        font-size: 1.8rem;
-    }
-
-    span {
-        font-size: 1.2rem;
-        font-weight: bold;
-    }
-
-    p {
-        font-size: 1.1rem;
-        margin: 5px 0 0 0;
-        font-style: italic;
-    }
 
 }
 
 .panel {
-    padding: 0 18px;
-    display: none;
+    padding: 15px;
     background-color: white;
     overflow: hidden;
-}
 
-.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-    position: absolute;
-    right: 5%;
-    top: 40%;
-}
 
-.active:after {
-    content: "\2212";
 }
