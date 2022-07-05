@@ -6,7 +6,7 @@
         <AccordionHeader />
       </template>
       <template v-slot:checkout-card>
-        <CheckoutCard v-for="item in cartData" v-bind:item="item" />
+        <CheckoutCard v-for="item in cartData.cart.entries" v-bind:item="item" />
       </template>
     </CheckoutAccordion>
   </div>

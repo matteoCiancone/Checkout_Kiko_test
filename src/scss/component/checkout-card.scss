@@ -12,14 +12,26 @@
 
        .prod-price {
            margin: 0 5px 0 5px;
-           float: right;
            font-weight: bold;
            font-size: 1.4rem;
+           float: right;
        }
 
        .prod-quantity {
            margin: 0 5px 0 5px;
            font-size: 1.4rem;
+       }
+
+       .prod-color {
+           width: 20px;
+           border-radius: 100%;
+           border: 1px solid black;
+       }
+
+       .card-img {
+           border: 1px solid #ddd;
+           border-radius: 20%;
+           margin-right: 5px;
        }
 
    }
