@@ -1,17 +1,25 @@
    .card {
        display: flex;
 
+       .card-body {
+           width: 100%;
+       }
+
        h2 {
            margin-top: 0;
+           margin-left: 5px;
        }
 
        .prod-price {
            margin: 0 5px 0 5px;
            float: right;
+           font-weight: bold;
+           font-size: 1.4rem;
        }
 
        .prod-quantity {
            margin: 0 5px 0 5px;
+           font-size: 1.4rem;
        }
 
    }

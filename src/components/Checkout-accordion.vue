@@ -7,7 +7,7 @@
             </svg>
         </button>
         <div v-show="isOpen" :id="`collapse${_uid}`" class="panel">
-            <slot name="order-recap" />
+            <slot name="checkout-card" />
         </div>
     </div>
 </template>

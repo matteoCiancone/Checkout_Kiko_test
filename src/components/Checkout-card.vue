@@ -3,11 +3,10 @@
         <img src="" class="card-img" alt=".">
         <div class="card-body">
             <h2>{{ item.entries[0].product.name }}</h2>
-            <div class="prod-color"></div>
-            <span class="prod-quantity">x1</span>
-            <span class="prod-price">10&euro;</span>
+            <img class="prod-color" src="" alt="Colore prodotto">
+            <span class="prod-quantity">x{{ item.entries[0].quantity }}</span>
+            <span class="prod-price">{{ item.totalPriceWithTax.formattedValue }}</span>
         </div>
-        <!--TOTALE DA AGGIUNGERE-->
     </div>
 </template>
 
@@ -15,7 +14,7 @@
 <script>
 import json from "../../cartData.json";
 export default {
-    name: "order-recap",
+    name: "checkout-card",
     data() {
         return {
             cartData: json
@@ -27,5 +26,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../../src/scss/component/order-recap.scss"
+@import "../../src/scss/component/checkout-card.scss"
 </style>

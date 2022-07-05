@@ -5,10 +5,9 @@
       <template v-slot:header>
         <AccordionHeader />
       </template>
-      <template v-slot:order-recap>
-        <OrderRecap v-for="data in cartData" v-bind:item="data"></OrderRecap>
+      <template v-slot:checkout-card>
+        <CheckoutCard v-for="item in cartData" v-bind:item="item" />
       </template>
-
     </CheckoutAccordion>
   </div>
 </template>
@@ -17,7 +16,7 @@
 import CheckoutForm from './components/Checkout-form.vue'
 import CheckoutAccordion from './components/Checkout-accordion.vue'
 import AccordionHeader from './components/Accordion-header.vue'
-import OrderRecap from './components/Order-recap.vue'
+import CheckoutCard from './components/Checkout-card.vue'
 import json from "../cartData.json";
 
 export default {
@@ -26,11 +25,11 @@ export default {
     CheckoutForm,
     CheckoutAccordion,
     AccordionHeader,
-    OrderRecap
+    CheckoutCard
   },
   data() {
     return {
-      cartData: json
+      cartData: json,
     }
   },
 }
