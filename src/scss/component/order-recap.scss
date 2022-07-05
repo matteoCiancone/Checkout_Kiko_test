@@ -1,4 +1,9 @@
    .card {
+       display: flex;
+
+       h2 {
+           margin-top: 0;
+       }
 
        .prod-price {
            margin: 0 5px 0 5px;

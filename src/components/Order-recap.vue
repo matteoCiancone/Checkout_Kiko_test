@@ -2,19 +2,26 @@
     <div class="card">
         <img src="" class="card-img" alt=".">
         <div class="card-body">
-            <h2>Instant color Matte liquid</h2>
+            <h2>{{ item.entries[0].product.name }}</h2>
             <div class="prod-color"></div>
             <span class="prod-quantity">x1</span>
-            <span class="prod-price">5&euro;</span>
+            <span class="prod-price">10&euro;</span>
         </div>
-        <!--TOTALE-->
+        <!--TOTALE DA AGGIUNGERE-->
     </div>
 </template>
 
 
 <script>
+import json from "../../cartData.json";
 export default {
-    name: "order-recap"
+    name: "order-recap",
+    data() {
+        return {
+            cartData: json
+        }
+    },
+    props: ["item"]
 }
 
 </script>
