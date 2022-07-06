@@ -7,6 +7,7 @@
       </template>
       <template v-slot:checkout-card>
         <CheckoutCard v-for="item in cartData.cart.entries" v-bind:item="item" />
+        <Recap />
       </template>
     </CheckoutAccordion>
   </div>
@@ -17,6 +18,7 @@ import CheckoutForm from './components/Checkout-form.vue'
 import CheckoutAccordion from './components/Checkout-accordion.vue'
 import AccordionHeader from './components/Accordion-header.vue'
 import CheckoutCard from './components/Checkout-card.vue'
+import Recap from './components/Recap.vue'
 import json from "../cartData.json";
 
 export default {
@@ -25,7 +27,8 @@ export default {
     CheckoutForm,
     CheckoutAccordion,
     AccordionHeader,
-    CheckoutCard
+    CheckoutCard,
+    Recap
   },
   data() {
     return {

@@ -1,13 +1,14 @@
    .card {
        display: flex;
+       margin-bottom: 15px;
 
        .card-body {
            width: 100%;
        }
 
        h2 {
-           margin-top: 0;
-           margin-left: 5px;
+           margin: 0 0 0px 5px;
+           font-size: 1.6rem;
        }
 
        .prod-price {
@@ -15,6 +16,7 @@
            font-weight: bold;
            font-size: 1.4rem;
            float: right;
+           transform: translate(10px, 5px);
        }
 
        .prod-quantity {
@@ -30,7 +32,7 @@
 
        .card-img {
            border: 1px solid #ddd;
-           border-radius: 20%;
+           border-radius: 15%;
            margin-right: 5px;
        }
 
