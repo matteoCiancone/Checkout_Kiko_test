@@ -3,10 +3,15 @@
         <button @click="toggleAccordion()" class="accordion" :aria-expanded="isOpen" :aria-controls="`collapse${_uid}`">
             <slot name="header" />
         </button>
-        <div v-show="isOpen" :id="`collapse${_uid}`" class="panel">
-            <slot name="checkout-card" />
-        </div>
+
+        <transition name="slide-down">
+            <div v-show="isOpen" :id="`collapse${_uid}`" class="panel">
+                <slot name="checkout-card" />
+            </div>
+        </transition>
+
     </div>
+
 </template>
 
 

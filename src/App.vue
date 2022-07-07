@@ -3,14 +3,20 @@
     <CheckoutForm />
     <CheckoutAccordion>
       <template v-slot:header>
-        <AccordionHeader />
+        <AccordionHeader v-bind:item="cartData.cart" />
       </template>
       <template v-slot:checkout-card>
-        <CheckoutCard v-for="item in cartData.cart.entries" v-bind:item="item" />
-        <Recap />
+        <CheckoutCard v-for="data in cartData.cart.entries" v-bind:item="data" />
+        <Recap v-bind:item="cartData.cart" />
       </template>
     </CheckoutAccordion>
+
+    <div>
+      <h1 style="margin-top:500px ;">Footer</h1>
+    </div>
   </div>
+
+
 </template>
 
 <script>

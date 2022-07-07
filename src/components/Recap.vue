@@ -3,11 +3,12 @@
     <div class="order-recap">
         <hr>
         <div class="recap">
-            <h2 class="sub-tot">Sub-totale <span>22,88 &euro;</span></h2>
-            <h2 class="discount green">Promo <span>22 &euro;</span></h2>
-            <h2 class="discount green">Codice sconto <span>22,88 &euro;</span></h2>
-            <h2 class="discount green">Buono KIKO kisses <span>22,88 &euro;</span></h2>
-            <h2 class="ship-price">Spese di spedizione (stimate) <span>22,88 &euro;</span></h2>
+            <h2 class="sub-tot">Sub-totale <span> {{ item.subTotal.formattedValue }}</span></h2>
+            <h2 class="discount green">Promo <span> 22,88 &euro;</span></h2>
+            <h2 class="discount green">Codice sconto <span> 22,88 &euro;</span></h2>
+            <h2 class="discount green">Buono KIKO kisses <span> 22,88 &euro;</span></h2>
+            <h2 class="ship-price">Spese di spedizione (stimate) <span>{{ item.deliveryCost.formattedValue }}</span>
+            </h2>
 
         </div>
         <hr>
@@ -24,8 +25,14 @@
 
 
 <script>
+
 export default {
-    name: "recap"
+    name: "recap",
+    data() {
+        return {
+        }
+    },
+    props: ["item"]
 }
 
 </script>
