@@ -12,7 +12,17 @@
     border-radius: 15px;
     text-align: left;
     font-size: 15px;
-    transition: 0.4s;
+    position: relative;
+
+    &[aria-expanded="true"] {
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    svg {
+        position: absolute;
+        top: 45%;
+        right: 5%;
+    }
 
 }
 
@@ -22,8 +32,8 @@
     padding: 15px;
     background-color: white;
     border-radius: 0px 0px 15px 15px;
+    overflow: hidden;
 }
-
 
 
 .slide-down-enter-active {
@@ -32,7 +42,7 @@
 
 
 .slide-down-leave-active {
-    transition: all .2s ease-in;
+    transition: all .1s ease-in;
 }
 
 .slide-down-enter,

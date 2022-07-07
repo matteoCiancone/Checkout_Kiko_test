@@ -4,9 +4,16 @@
         <hr>
         <div class="recap">
             <h2 class="sub-tot">Sub-totale <span> {{ item.subTotal.formattedValue }}</span></h2>
-            <h2 class="discount green">Promo <span> 22,88 &euro;</span></h2>
-            <h2 class="discount green">Codice sconto <span> 22,88 &euro;</span></h2>
-            <h2 class="discount green">Buono KIKO kisses <span> 22,88 &euro;</span></h2>
+            <h2 v-if="item.totalDiscounts.value > 0" class="discount green">Promo <span class="promo">{{
+                    item.totalDiscounts.formattedValue
+            }} </span></h2>
+            <h2 v-if="item.totalGiftCard.value > 0" class="discount green">Codice sconto <span class="promo">{{
+                    item.totalGiftCard.formattedValue
+            }} </span></h2>
+            <h2 v-if="item.totalDiscounts.formattedValue > 0" class="discount green">Buono KIKO kisses <span
+                    class="promo">{{
+                            item.totalDiscounts.formattedValue
+                    }} </span></h2>
             <h2 class="ship-price">Spese di spedizione (stimate) <span>{{ item.deliveryCost.formattedValue }}</span>
             </h2>
 
@@ -14,7 +21,7 @@
         <hr>
 
         <div class="final-tot">
-            <h2 class="total">Totale ordine <span>22,88 &euro;</span></h2>
+            <h2 class="total">Totale ordine <span>{{ item.totalPrice.formattedValue }}</span></h2>
             <p>IVA inclusa</p>
             <a href="">Torna al carrello per modificare l'ordine</a>
         </div>
@@ -29,9 +36,19 @@
 export default {
     name: "recap",
     data() {
+
         return {
+
         }
     },
+    mounted() {  //da qui posso richiamare le funzioni
+    },
+    computed: {  //funzioni che danno valori più "secchi"
+        // showPromo: function() {
+        // return promo.value > 0
+    },
+
+    methods: {}, //scrivo funzioni
     props: ["item"]
 }
 
