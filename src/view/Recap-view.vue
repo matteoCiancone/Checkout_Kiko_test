@@ -7,7 +7,8 @@
             </template>
             <template v-slot:checkout-card>
                 <CheckoutCard v-for="data in cartData.cart.entries" v-bind:item="data" />
-                <Recap v-bind:item="cartData.cart" />
+                <Recap v-bind:item="cartData" />
+                <a href="">Torna al carrello per modificare l'ordine</a>
             </template>
         </CheckoutAccordion>
         <div>

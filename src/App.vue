@@ -2,21 +2,22 @@
 <template>
   <div id="app">
     <div>
-      <router-link to="confirm">Order confirm page</router-link>
+      <router-link to="thankyou">Order confirm page</router-link>
     </div>
-    <RecapView />
+    <ThankYouPage />
   </div>
 </template>
 
 <script>
 import RecapView from './view/Recap-view.vue';
-import VueRouter from 'vue-router';
+import ThankYouPage from './view/ThankYouPage-view.vue';
 
 
 export default {
   name: 'app',
   components: {
-    RecapView
+    RecapView,
+    ThankYouPage
   },
   data() {
     return {
