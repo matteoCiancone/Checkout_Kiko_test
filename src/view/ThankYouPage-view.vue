@@ -11,8 +11,14 @@
             <h2>Il tuo ordine</h2>
             <CheckoutCard v-for="data in cartData.cart.entries" v-bind:item="data" />
             <Recap v-bind:item="cartData" />
-
+            <CheckoutAccordion>
+                <template v-slot:header>
+                </template>
+                <template v-slot:checkout-card>
+                </template>
+            </CheckoutAccordion>
         </div>
+
         <KissesBanner />
 
     </div>
@@ -21,6 +27,7 @@
 
 <script>
 import CheckoutCard from '../components/Checkout-card.vue'
+import CheckoutAccordion from '../components/Checkout-accordion.vue'
 import Recap from '../components/Recap.vue'
 import KissesBanner from '@/components/kisses-banner.vue'
 import json from '../../cart-typ.json'
@@ -29,6 +36,7 @@ export default {
     name: "thankYouPage",
     components: {
         CheckoutCard,
+        CheckoutAccordion,
         Recap,
         KissesBanner
     },
