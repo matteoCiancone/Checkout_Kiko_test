@@ -11,8 +11,9 @@
             <h2>Il tuo ordine</h2>
             <CheckoutCard v-for="data in cartData.cart.entries" v-bind:item="data" />
             <Recap v-bind:item="cartData" />
-            <CheckoutAccordion>
+            <CheckoutAccordion class="accordion-typ">
                 <template v-slot:header>
+                    <h3>Dati di spedizione</h3>
                 </template>
                 <template v-slot:checkout-card>
                 </template>
