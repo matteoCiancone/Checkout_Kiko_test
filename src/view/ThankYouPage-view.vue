@@ -18,6 +18,27 @@
                 <template v-slot:checkout-card>
                 </template>
             </CheckoutAccordion>
+            <CheckoutAccordion class="accordion-typ">
+                <template v-slot:header>
+                    <h3>Dati di fatturazione</h3>
+                </template>
+                <template v-slot:checkout-card>
+                </template>
+            </CheckoutAccordion>
+            <CheckoutAccordion class="accordion-typ">
+                <template v-slot:header>
+                    <h3>Spedizione</h3>
+                </template>
+                <template v-slot:checkout-card>
+                </template>
+            </CheckoutAccordion>
+            <CheckoutAccordion class="accordion-typ">
+                <template v-slot:header>
+                    <h3>Pagamento</h3>
+                </template>
+                <template v-slot:checkout-card>
+                </template>
+            </CheckoutAccordion>
         </div>
 
         <KissesBanner v-bind:item="cartData" />
