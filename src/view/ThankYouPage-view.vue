@@ -19,7 +19,7 @@
             </CheckoutAccordion>
         </div>
 
-        <KissesBanner />
+        <KissesBanner v-bind:item="cartData" />
 
     </div>
 </template>
