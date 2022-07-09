@@ -1,5 +1,5 @@
 <template>
-    <div class="Cart__Main">
+    <div class="Cart__Accordion">
         <button @click="toggleAccordion()" class="accordion" :aria-expanded="isOpen" :aria-controls="`collapse${_uid}`">
             <slot name="header" />
             <svg class="arrow" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
