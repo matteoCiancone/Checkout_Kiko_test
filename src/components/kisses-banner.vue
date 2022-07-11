@@ -17,8 +17,7 @@
         <div class="banner-text">
             <p>Con questo ordine hai guadagnato</p>
             <h2>{{ item.loyalty.issuedPoint }} <span>Kisses</span></h2>
-            <p>Guadagnati con questo ordine.
-                Per visualizzare il tuo saldo punti Kisses accedi alla sezione dedicata nel MyAccount. Qui potrai anche
+            <p>Per visualizzare il tuo saldo punti Kisses accedi alla sezione dedicata nel MyAccount. Qui potrai anche
                 tracciare il tuo ordine e gestire le informazioni del tuo profilo!</p>
             <form action="">
                 <button class="myAccount-btn" type="submit">Vai al MyAccount</button>

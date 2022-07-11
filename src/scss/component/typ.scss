@@ -1,8 +1,27 @@
 .typ-header {
     background-color: white;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
 
-    h2 {
+    h1 {
+        color: green;
+        font-size: 2.7rem;
+    }
+
+    .orderNumber {
         margin-bottom: 0;
+    }
+
+    a {
+        color: #D11A6F;
+        font-size: 1.6rem;
+        font-weight: 300;
+
+    }
+
+    .cartCode {
+        font-weight: 100;
     }
 }
 
@@ -18,4 +37,16 @@
 .typ-card {
     padding: 15px;
     background-color: white;
+}
+
+.form-Btn-home {
+    text-align: center;
+    margin: 20px;
+
+    button {
+        background: none;
+        border: 1px solid black;
+        width: 100%;
+        padding: 10px;
+    }
 }

@@ -3,10 +3,9 @@
         <div class="typ-card">
             <div class="typ-header">
                 <h1>Ordine confermato</h1>
-                <h2>Numero d'ordine</h2>
-                <h3></h3>
-                <h3></h3>
-                <a href=""></a>
+                <h2 class="orderNumber">Numero d'ordine</h2>
+                <h2 class="cartCode">#{{ item.cart.code }}</h2>
+                <a href="">Registrati e traccia facilmente il tuo ordine</a>
             </div>
             <h2>Il tuo ordine</h2>
             <CheckoutCard v-for="data in cartData.cart.entries" v-bind:item="data" />
@@ -39,6 +38,9 @@
                 <template v-slot:checkout-card>
                 </template>
             </CheckoutAccordion>
+            <form class="form-Btn-home" action="">
+                <button class="backHome-btn" type="submit">Torna alla Home</button>
+            </form>
         </div>
 
         <KissesBanner v-bind:item="cartData" />
@@ -67,6 +69,7 @@ export default {
             cartData: json,
         }
     },
+    props: ["item"]
 }
 </script>
 
