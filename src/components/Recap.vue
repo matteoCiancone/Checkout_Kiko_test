@@ -3,7 +3,7 @@
     <div class="order-recap">
         <hr>
         <div class="recap">
-            <h2 class="sub-tot">Sub-totale <span> {{ item.subTotal }}</span></h2>
+            <h2 class="sub-tot">Sub-totale <span> {{ item.cart.subTotal.formattedValue }}</span></h2>
             <h2 v-if="item.cart.totalDiscounts.value > 0" class="discount green">Promo <span class="promo">{{
                     item.cart.totalDiscounts.formattedValue
             }} </span></h2>
@@ -13,6 +13,9 @@
             <h2 v-if="item.loyalty.issuedPoint > 0" class="discount green">Buono KIKO kisses <span class="promo">{{
                     item.loyalty.issuedPoint
             }} </span></h2>
+            <h2 class="total-tax">IVA <span>{{ item.cart.totalTax.formattedValue
+            }}</span>
+            </h2>
             <h2 class="ship-price">Spese di spedizione (stimate) <span>{{ item.cart.deliveryCost.formattedValue
             }}</span>
             </h2>

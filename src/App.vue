@@ -1,10 +1,16 @@
+<script setup>
+import { RouterLink } from "vue-router";
+</script>
+
 
 <template>
   <div id="app">
     <div>
-      <router-link to="thankyou">Order confirm page</router-link>
+      <router-link to="/">Order confirm page</router-link>
+      <router-link to="/thankyou">Thank you page</router-link>
+      <router-link to="/product">Product page</router-link>
     </div>
-    <ThankYouPage v-bind:item="cartData" />
+    <router-view />
   </div>
 </template>
 

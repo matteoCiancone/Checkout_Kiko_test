@@ -7,6 +7,10 @@
     text-align: center;
     padding: 0px 20px 20px 20px;
 
+    .banner-text-none-sm {
+        display: none;
+    }
+
     p {
         font-size: 1.4rem;
         margin-top: 0;
@@ -15,17 +19,55 @@
     h2 {
         font-size: 5rem;
         margin: 8px;
+        position: relative;
 
         span {
             font-size: 1.8rem;
             text-transform: uppercase;
+            position: absolute;
+            top: 15%;
         }
     }
 
     .myAccount-btn {
+        display: block;
         padding: 10px;
         width: 100%;
         border: 2px solid black;
+        border-radius: 20px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 1.2rem
     }
 
+}
+
+
+@media (min-width: 768px) {
+
+    .kisses-banner {
+        display: flex;
+        justify-content: center;
+        background: #f0f0f0;
+
+        .banner-text {
+            width: 25%;
+            text-align: start;
+            padding: 20px;
+
+            .banner-text-none-sm {
+                display: block;
+                margin: 0;
+            }
+
+            .banner-text-none-lg {
+                display: none;
+            }
+
+            .myAccount-btn {
+                text-align: center;
+            }
+        }
+    }
 }

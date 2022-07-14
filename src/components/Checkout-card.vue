@@ -7,6 +7,8 @@
                 <img class="prod-color"
                     v-bind:src="item.product.baseOptions[0].options[0].imagesByFormat.original.image"
                     alt="Colore prodotto">
+                <span class="color-name">{{ item.product.baseOptions[0].options[0].variantOptionQualifiers[0].value
+                }}</span>
                 <span class="prod-quantity">x{{ item.quantity }}</span>
                 <span class="prod-price">{{ item.totalPrice.formattedValue }}</span>
             </div>
