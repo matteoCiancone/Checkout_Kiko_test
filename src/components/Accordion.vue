@@ -1,49 +1,38 @@
 <template>
-    <div class="Accordion">
-        <button @click="toggleAccordion()" class="accordion" :aria-expanded="isOpen" :aria-controls="`collapse${_uid}`">
-            <slot name="accordion-header" />
-            <svg class="arrow" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
-                clip-rule="evenodd">
-                <path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z" />
-            </svg>
-        </button>
-
-        <transition name="slide-down">
-            <div v-show="isOpen" :id="`collapse${_uid}`" class="panel">
-                <slot name="accordion-panel" />
-            </div>
-        </transition>
-
+    <div>
+        <slot></slot>
     </div>
-
 </template>
 
 
 <script>
+import AccordionItem from "../components/Accordion-item.vue"
 export default {
     name: "Accordion",
+    components: {
+        AccordionItem
+    },
     data() {
         return {
-            isOpen: false,
-        };
-    },
-
-    mounted() {
-    },
-
-    methods: {
-        toggleAccordion() {
-            this.isOpen = !this.isOpen;
+            Accordion: {
+                count: 0,
+                active: null,
+                multiple: this.isMultiple,
+            },
         }
     },
+    provide() {
+        return {
+            Accordion: this.Accordion,
+        }
+    },
+
+
+    props: {
+        isMultiple: {
+            type: Boolean,
+            default: false,
+        }
+    }
 }
-
-
-
 </script>
-
-
-    <!-- Add "scoped" attribute to limit CSS to this component only -->
-    <style scoped lang="scss">
-    @import "../../src/scss/component/accordion.scss"
-    </style>

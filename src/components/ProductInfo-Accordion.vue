@@ -1,15 +1,17 @@
 <template>
   <div id="accordionVueComponent" class="accordion-container">
     <Accordion v-for="(item, index) in tabsContent" :key="index">
-      <template v-slot:accordion-header>
-        <h3 class="accordion-title"> {{ item.buttonText }}</h3>
-      </template>
-      <template v-slot:accordion-panel>
-        <div v-if="item.youtubeURL" class="accordion-video">
-          <iframe class="video" :src="item.youtubeURL" allowfullscreen=""></iframe>
-        </div>
-        <div v-else v-html="item.content"></div>
-      </template>
+      <AccordionItem>
+        <template v-slot:accordion-header>
+          <h3 class="accordion-title"> {{ item.buttonText }}</h3>
+        </template>
+        <template v-slot:accordion-panel>
+          <div v-if="item.youtubeURL" class="accordion-video">
+            <iframe class="video" :src="item.youtubeURL" allowfullscreen=""></iframe>
+          </div>
+          <div v-else v-html="item.content"></div>
+        </template>
+      </AccordionItem>
     </Accordion>
   </div>
 </template>
@@ -18,9 +20,10 @@
 
 <script>
 import Accordion from "../components/Accordion.vue"
+import AccordionItem from "./Accordion-item.vue";
 export default {
   name: 'ProductInfoAccordion',
-  components: { Accordion },
+  components: { Accordion, AccordionItem },
   data() {
     return {
       tabsContent: [],

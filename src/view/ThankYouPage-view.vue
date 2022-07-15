@@ -9,59 +9,47 @@
             </div>
             <h2>Il tuo ordine</h2>
             <CheckoutCard v-for="data in cartData.cart.entries" v-bind:item="data" />
-            <Recap v-bind:item="cartData" />
-            <Accordion class="accordion-typ">
-                <template v-slot:accordion-header>
-                    <h3>Dati di spedizione</h3>
-                </template>
-                <template v-slot:accordion-panel>
-                    <p>Nome: <span>{{ cartData.cart.deliveryAddress.firstName }}</span></p>
-                    <p>Cognome: <span>{{ cartData.cart.deliveryAddress.lastName }}</span></p>
-                    <p>Indirizzo: <span>{{ cartData.cart.deliveryAddress.line1 }}</span></p>
-                    <p>Città: <span>{{ cartData.cart.deliveryAddress.town }}</span></p>
-                    <p>CAP: <span>{{ cartData.cart.deliveryAddress.postalCode }}</span></p>
-                    <p>Telefono: <span>{{ cartData.cart.deliveryAddress.phone }}</span></p>
-                    <p>Nazione: <span>{{ cartData.cart.deliveryAddress.country.name }}</span></p>
-
-                </template>
-            </Accordion>
-            <Accordion class="accordion-typ">
-                <template v-slot:accordion-header>
-                    <h3>Dati di fatturazione</h3>
-                </template>
-                <template v-slot:accordion-panel>
-                    <p>Nome: <span>{{ cartData.cart.billingAddress.firstName }}</span></p>
-                    <p>Cognome: <span>{{ cartData.cart.billingAddress.lastName }}</span></p>
-                    <p>Indirizzo: <span>{{ cartData.cart.billingAddress.line1 }}</span></p>
-                    <p>Città: <span>{{ cartData.cart.billingAddress.town }}</span></p>
-                    <p>CAP: <span>{{ cartData.cart.billingAddress.postalCode }}</span></p>
-                    <p>Telefono: <span>{{ cartData.cart.billingAddress.phone }}</span></p>
-                    <p>Nazione: <span>{{ cartData.cart.billingAddress.country.name }}</span></p>
-                </template>
-            </Accordion>
-            <Accordion class="accordion-typ">
-                <template v-slot:accordion-header>
-                    <h3>Spedizione</h3>
-                </template>
-                <template v-slot:accordion-panel>
-                    <h2>{{ cartData.cart.deliveryMode.name }} <span>{{ cartData.cart.deliveryMode.code }}</span></h2>
-                    <p>{{ cartData.cart.deliveryMode.description }}</p>
-                </template>
-            </Accordion>
-            <Accordion class="accordion-typ">
-                <template v-slot:accordion-header>
-                    <h3>Pagamento</h3>
-                </template>
-                <template v-slot:accordion-panel>
-                    <h2>{{ cartData.cart.paymentMode.code }}</h2>
-                    <p>{{ cartData.cart.paymentMode.description }}</p>
-                </template>
+            <Recap :item="cartData" />
+            <Accordion :isMultiple="true" class="accordion-typ">
+                <AccordionItem>
+                    <template v-slot:accordion-header>
+                        <h3>Dati di spedizione</h3>
+                    </template>
+                    <template v-slot:accordion-panel>
+                        <Address v-bind:item="cartData.cart.deliveryAddress" />
+                    </template>
+                </AccordionItem>
+                <AccordionItem>
+                    <template v-slot:accordion-header>
+                        <h3>Dati di fatturazione</h3>
+                    </template>
+                    <template v-slot:accordion-panel>
+                        <Address v-bind:item="cartData.cart.billingAddress" />
+                    </template>
+                </AccordionItem>
+                <AccordionItem>
+                    <template v-slot:accordion-header>
+                        <h3>Spedizione</h3>
+                    </template>
+                    <template v-slot:accordion-panel>
+                        <h2>{{ cartData.cart.deliveryMode.name }} <span>{{ cartData.cart.deliveryMode.code }}</span>
+                        </h2>
+                        <p>{{ cartData.cart.deliveryMode.description }}</p>
+                    </template>
+                </AccordionItem>
+                <AccordionItem>
+                    <template v-slot:accordion-header>
+                        <h3>Pagamento</h3>
+                    </template>
+                    <template v-slot:accordion-panel>
+                        <h2>{{ cartData.cart.paymentMode.code }}</h2>
+                        <p>{{ cartData.cart.paymentMode.description }}</p>
+                    </template>
+                </AccordionItem>
             </Accordion>
             <a class="backHome-btn" href="">Torna alla Home</a>
         </div>
-
         <KissesBanner v-bind:item="cartData" />
-
     </div>
 </template>
 
@@ -69,9 +57,11 @@
 <script>
 import CheckoutCard from '../components/Checkout-card.vue'
 import Accordion from '../components/Accordion.vue'
+import AccordionItem from '../components/Accordion-item.vue'
 import Recap from '../components/Recap.vue'
 import KissesBanner from '@/components/kisses-banner.vue'
 import json from '../../cart-typ.json'
+import Address from '@/components/Address-item.vue'
 
 export default {
     name: "thankYouPage",
@@ -79,14 +69,20 @@ export default {
         CheckoutCard,
         Accordion,
         Recap,
-        KissesBanner
+        AccordionItem,
+        KissesBanner,
+        Address
     },
     data() {
         return {
             cartData: json,
         }
     },
-    props: ["item"]
+
+    computed: {
+
+    },
+
 }
 </script>
 
