@@ -10,40 +10,12 @@
             <h2>Il tuo ordine</h2>
             <CheckoutCard v-for="data in cartData.cart.entries" v-bind:item="data" />
             <Recap :item="cartData" />
-            <Accordion :isMultiple="true" class="accordion-typ">
+            <Accordion :isMultiple="true" v-for="item in accordionContents" class="accordion-typ">
                 <AccordionItem>
                     <template v-slot:accordion-header>
-                        <h3>Dati di spedizione</h3>
+                        <h3>{{ item.title }}</h3>
                     </template>
                     <template v-slot:accordion-panel>
-                        <Address v-bind:item="cartData.cart.deliveryAddress" />
-                    </template>
-                </AccordionItem>
-                <AccordionItem>
-                    <template v-slot:accordion-header>
-                        <h3>Dati di fatturazione</h3>
-                    </template>
-                    <template v-slot:accordion-panel>
-                        <Address v-bind:item="cartData.cart.billingAddress" />
-                    </template>
-                </AccordionItem>
-                <AccordionItem>
-                    <template v-slot:accordion-header>
-                        <h3>Spedizione</h3>
-                    </template>
-                    <template v-slot:accordion-panel>
-                        <h2>{{ cartData.cart.deliveryMode.name }} <span>{{ cartData.cart.deliveryMode.code }}</span>
-                        </h2>
-                        <p>{{ cartData.cart.deliveryMode.description }}</p>
-                    </template>
-                </AccordionItem>
-                <AccordionItem>
-                    <template v-slot:accordion-header>
-                        <h3>Pagamento</h3>
-                    </template>
-                    <template v-slot:accordion-panel>
-                        <h2>{{ cartData.cart.paymentMode.code }}</h2>
-                        <p>{{ cartData.cart.paymentMode.description }}</p>
                     </template>
                 </AccordionItem>
             </Accordion>
@@ -79,7 +51,23 @@ export default {
         }
     },
 
-
+    computed: {
+        accordionShipping: function () {
+            const data = {
+                title: 'Dati di spedizione',
+                content: <Address v-bind:item="cartData.cart.deliveryAddress" />
+            }
+        },
+        accordionBilling: function () {
+            const data = {
+                title: 'Dati di pagamento',
+                content: <Address v-bind:item="cartData.cart.billingAddress" />
+            }
+        },
+        accordionContents: function () {
+            return [this.accordionShipping, this.accordionBilling]
+        }
+    },
 
 }
 </script>
