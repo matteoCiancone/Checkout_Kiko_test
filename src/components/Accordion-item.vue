@@ -47,9 +47,7 @@ export default {
     },
     methods: {
         toggleAccordion() {
-            if (this.Accordion.multiple == true) {
-
-            } else if (this.isOpen) {
+            if (this.isOpen) {
                 this.Accordion.active = null;
             } else {
                 this.Accordion.active = this.index;
