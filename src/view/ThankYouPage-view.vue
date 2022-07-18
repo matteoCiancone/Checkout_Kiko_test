@@ -10,7 +10,7 @@
             <h2>Il tuo ordine</h2>
             <CheckoutCard v-for="data in cartData.cart.entries" v-bind:item="data" />
             <Recap :item="cartData" />
-            <Accordion :isMultiple="true" v-for="item in accordionContents" class="accordion-typ">
+            <Accordion :isMultiple="true" v-for="(item, index) in accordionContents" :key="index" class="accordion-typ">
                 <AccordionItem>
                     <template v-slot:accordion-header>
                         <h3>{{ item.title }}</h3>
@@ -51,8 +51,6 @@ export default {
             cartData: json,
         }
     },
-
-
     computed: {
         accordionShipping: function () {
             const data = {
