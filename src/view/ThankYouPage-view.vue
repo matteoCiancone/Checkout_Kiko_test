@@ -16,6 +16,7 @@
                         <h3>{{ item.title }}</h3>
                     </template>
                     <template v-slot:accordion-panel>
+                        {{ item.content }}
                     </template>
                 </AccordionItem>
             </Accordion>
@@ -50,6 +51,7 @@ export default {
             cartData: json,
         }
     },
+
 
     computed: {
         accordionShipping: function () {
