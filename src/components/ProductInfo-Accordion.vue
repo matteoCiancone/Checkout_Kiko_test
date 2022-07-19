@@ -1,6 +1,6 @@
 <template>
   <div id="accordionVueComponent" class="accordion-container">
-    <Accordion v-for="(item, index) in tabsContent" :key="index">
+    <AccordionManager v-for="(item, index) in tabsContent" :key="index">
       <AccordionItem>
         <template v-slot:accordion-header>
           <h3 class="accordion-title"> {{ item.buttonText }}</h3>
@@ -12,18 +12,18 @@
           <div v-else v-html="item.content"></div>
         </template>
       </AccordionItem>
-    </Accordion>
+    </AccordionManager>
   </div>
 </template>
  
 
 
 <script>
-import Accordion from "../components/Accordion.vue"
+import AccordionManager from "../components/Accordion-manager.vue"
 import AccordionItem from "./Accordion-item.vue";
 export default {
   name: 'ProductInfoAccordion',
-  components: { Accordion, AccordionItem },
+  components: { AccordionManager, AccordionItem },
   data() {
     return {
       tabsContent: [],

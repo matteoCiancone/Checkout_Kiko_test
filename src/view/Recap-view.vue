@@ -24,7 +24,7 @@
 
 <script>
 import CheckoutForm from '../components/Checkout-form.vue'
-import Accordion from '../components/Accordion.vue'
+import AccordionManager from '../components/Accordion-manager.vue'
 import AccordionHeader from '../components/Accordion-header.vue'
 import AccordionItem from "../components/Accordion-item.vue"
 import CheckoutCard from '../components/Checkout-card.vue'
@@ -35,7 +35,7 @@ export default {
     name: "recapView",
     components: {
         CheckoutForm,
-        Accordion,
+        AccordionManager,
         AccordionHeader,
         AccordionItem,
         CheckoutCard,

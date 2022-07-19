@@ -56,7 +56,7 @@
 
 <script>
 import CheckoutCard from '../components/Checkout-card.vue'
-import Accordion from '../components/Accordion.vue'
+import AccordionManager from '../components/Accordion-manager.vue'
 import AccordionItem from '../components/Accordion-item.vue'
 import Recap from '../components/Recap.vue'
 import KissesBanner from '@/components/kisses-banner.vue'
@@ -67,7 +67,7 @@ export default {
     name: "thankYouPage",
     components: {
         CheckoutCard,
-        Accordion,
+        AccordionManager,
         Recap,
         AccordionItem,
         KissesBanner,

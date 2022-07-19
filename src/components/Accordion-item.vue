@@ -26,11 +26,11 @@
 
 
 <script>
-import Accordion from './Accordion.vue';
+import AccordionManager from './Accordion-manager.vue';
 export default {
     name: "AccordionItem",
     components: {
-        Accordion,
+        AccordionManager,
     },
     inject: ["Accordion"],
 
