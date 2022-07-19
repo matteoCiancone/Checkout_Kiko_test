@@ -32,7 +32,7 @@ export default {
     components: {
         AccordionManager,
     },
-    inject: ["Accordion"],
+    inject: ["AccordionManager"],
 
     data() {
         return {
@@ -41,21 +41,24 @@ export default {
     },
     computed: {
         isOpen() {
-            return this.index == this.Accordion.active
+            return this.index == this.AccordionManager.active
         }
 
     },
     methods: {
         toggleAccordion() {
-            if (this.isOpen) {
-                this.Accordion.active = null;
+
+            if (this.AccordionManager.multiple == true) {
+                this.index = this.AccordionManager.active;
+            } else if (this.isOpen) {
+                this.AccordionManager.active = null;
             } else {
-                this.Accordion.active = this.index;
+                this.AccordionManager.active = this.index;
             }
         }
     },
     created() {
-        this.index = this.Accordion.count++
+        this.index = this.AccordionManager.count++
     },
 
 }

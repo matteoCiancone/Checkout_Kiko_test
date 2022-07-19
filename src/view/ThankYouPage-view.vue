@@ -10,7 +10,7 @@
             <h2>Il tuo ordine</h2>
             <CheckoutCard v-for="data in cartData.cart.entries" v-bind:item="data" />
             <Recap :item="cartData" />
-            <Accordion :isMultiple="true" class="accordion-typ">
+            <AccordionManager :isMultiple="true" class="accordion-typ">
                 <AccordionItem>
                     <template v-slot:accordion-header>
                         <h3>Dati di spedizione</h3>
@@ -46,7 +46,7 @@
                         <p>{{ cartData.cart.paymentMode.description }}</p>
                     </template>
                 </AccordionItem>
-            </Accordion>
+            </AccordionManager>
             <a class="backHome-btn" href="">Torna alla Home</a>
         </div>
         <KissesBanner v-bind:item="cartData" />

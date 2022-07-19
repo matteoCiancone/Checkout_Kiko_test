@@ -8,13 +8,13 @@
 <script>
 import AccordionItem from "../components/Accordion-item.vue"
 export default {
-    name: "Accordion",
+    name: "AccordionManager",
     components: {
         AccordionItem
     },
     data() {
         return {
-            Accordion: {
+            AccordionManager: {
                 count: 0,
                 active: null,
                 multiple: this.isMultiple,
@@ -23,7 +23,7 @@ export default {
     },
     provide() {
         return {
-            Accordion: this.Accordion,
+            AccordionManager: this.AccordionManager,
         }
     },
 
