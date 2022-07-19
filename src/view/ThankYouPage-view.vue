@@ -53,13 +53,13 @@ export default {
     },
     computed: {
         accordionShipping: function () {
-            const data = {
+            return data = {
                 title: 'Dati di spedizione',
                 content: <Address v-bind:item="cartData.cart.deliveryAddress" />
             }
         },
         accordionBilling: function () {
-            const data = {
+            return data = {
                 title: 'Dati di pagamento',
                 content: <Address v-bind:item="cartData.cart.billingAddress" />
             }
