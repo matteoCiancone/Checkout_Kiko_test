@@ -51,10 +51,11 @@ export default {
     data() {
         return {
             cartData: json,
+            accordionItems: [],
         }
 
     },
-    computed: {
+    methods: {
         accordionShipping: function () {
             return data = {
                 title: 'Dati di spedizione',
@@ -67,9 +68,13 @@ export default {
                 content: <Address v-bind:item="cartData.cart.billingAddress" />
             }
         },
-        accordionContents: function () {
-            return [this.accordionShipping, this.accordionBilling]
+
+        accordionContents: [accordionShipping, accordionBilling],
+
+        getData() {
+
         }
+
     },
 
 
